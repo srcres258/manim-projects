@@ -104,7 +104,7 @@ class RiemannZetaFunctionDisplayRealVarying(BaseScene):
         self.play(Write(self.complex_plane, run_time=2))
         self.wait(1)
 
-        while self.real_val < 1:
+        while self.real_val < 1 - self.real_val_inc_rate:
             old_zeta_func_curve = self.zeta_func_curve
             self.zeta_func_curve = self.__new_zeta_func_curve()
 

@@ -10,6 +10,7 @@ E = 1e-8
 # the closed interval from 0 to 1.
 def zeta(s):
     """The Riemann zeta function."""
+    print("Calculating zeta value for:", s)
 
     '''
     |             1        ∞     1       n              n
@@ -34,7 +35,9 @@ def zeta(s):
         res += step
 
         if abs(step) < E: break
-    return res / (1 - 2 ** (1 - s))
+    result = res / (1 - 2 ** (1 - s))
+    print("Result:", result)
+    return result
 
 
 class BaseScene(Scene):
@@ -60,11 +63,10 @@ class BaseScene(Scene):
         intro_text = Tex(r"Riemann $\zeta$ 函数的定义",
                          tex_template=TexTemplateLibrary.ctex, font_size=48)
         intro_text.to_corner(UP)
-        self.play(Write(intro_text))
-
         self.zeta_func_latex = MathTex(self.zeta_func_latex_str,
                                        font_size=48)
-        self.play(Write(self.zeta_func_latex, run_time=5))
-        self.wait(2)
+        self.play(Write(intro_text), Write(self.zeta_func_latex, run_time=3))
+        self.wait(1)
+
         self.play(FadeOut(intro_text),
                   FadeOut(self.zeta_func_latex))
