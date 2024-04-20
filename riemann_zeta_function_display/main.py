@@ -135,7 +135,7 @@ class RiemannZetaFunctionDisplayRealVarying(BaseScene):
         return tex
 
     def __new_zeta_func_curve(self) -> VMobject:
-        curve = VMobject(color=YELLOW, stroke_width=5)
+        curve = VMobject(color=YELLOW, stroke_width=2)
         imag_val = self.imag_range[0]
         init_dot = Dot(self.complex_plane.n2p(zeta(complex(self.real_val, imag_val))))
         curve.set_points_as_corners([init_dot.get_center(), init_dot.get_center()])
