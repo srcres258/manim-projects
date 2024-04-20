@@ -87,7 +87,7 @@ class RiemannZetaFunctionDisplayRealVarying(BaseScene):
             skip_animations)
         self.complex_plane = None
         self.real_val = 0
-        self.real_val_inc_rate = 0.1
+        self.real_val_inc_rate = 0.05
         self.imag_range = [0, 100]
         self.imag_step = 0.01
         self.zeta_func_val_latex = None

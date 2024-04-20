@@ -5,12 +5,8 @@ from textwrap3 import *
 E = 1e-8
 
 
-# From: https://github.com/nyasyamorina/trash-bin/blob/main/render_zeta.py
-# Definition of Riemann zeta function when the real part of s is within
-# the closed interval from 0 to 1.
-def zeta(s):
-    """The Riemann zeta function."""
-    print("Calculating zeta value for:", s)
+def __zeta(real, imag) -> (float, float):
+    s = complex(real, imag)
 
     '''
     |             1        ∞     1       n              n
@@ -35,7 +31,16 @@ def zeta(s):
         res += step
 
         if abs(step) < E: break
-    result = res / (1 - 2 ** (1 - s))
+    return res / (1 - 2 ** (1 - s))
+
+
+# From: https://github.com/nyasyamorina/trash-bin/blob/main/render_zeta.py
+# Definition of Riemann zeta function when the real part of s is within
+# the closed interval from 0 to 1.
+def zeta(s: complex) -> complex:
+    """The Riemann zeta function."""
+    print("Calculating zeta value for:", s)
+    result = __zeta(s.real, s.imag)
     print("Result:", result)
     return result
 
