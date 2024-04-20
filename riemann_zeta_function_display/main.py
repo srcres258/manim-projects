@@ -125,7 +125,7 @@ class RiemannZetaFunctionDisplayRealVarying(BaseScene):
 
     def __new_zeta_func_val_latex_str(self) -> str:
         return dedent(r"""\begin{matrix}
-                \Re(%.02f+b\mathrm{i}) \\
+                \zeta(%.02f+b\mathrm{i}) \\
                 b \in [%.02f, %.02f]
                 \end{matrix}""") % (self.real_val, self.imag_range[0], self.imag_range[1])
 
