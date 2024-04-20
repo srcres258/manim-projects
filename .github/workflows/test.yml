@@ -10,7 +10,7 @@ jobs:
         run: python --version
       - name: Check pip version
         run: pip --version
-      - name: Install pip packages
-        run: pip install -r requirements.txt
+      - name: Do setup works
+        run: ./setup-ubuntu.sh
       - name: Test riemann_zeta_function_display
         run: python -m manim -ql riemann_zeta_function_display/main.py RiemannZetaFunctionDisplay
