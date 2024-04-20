@@ -5,7 +5,7 @@ def new_zeta_func_val_latex_str(x: complex, fv: complex) -> str:
     return r"\zeta(%.04f+%.04f\mathrm{i})=%.04f+%.04f\mathrm{i}" % (x.real, x.imag, fv.real, fv.imag)
 
 
-class RiemannZetaFunctionDisplay(BaseScene):
+class RiemannZetaFunctionDisplayRealFixed(BaseScene):
     def __init__(self,
                  renderer=None,
                  camera_class=Camera,
