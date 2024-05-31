@@ -57,7 +57,7 @@ class BaseScene(Scene):
         super().__init__(renderer, camera_class, always_update_mobjects, random_seed, skip_animations)
         self.zeta_func_latex_str = dedent(
             r"""\zeta(s) \equiv \begin{cases}
-            \sum_{k=1}^{\infty} \frac{1}{k^2} & \Re(s) > 1 \\
+            \sum_{k=1}^{\infty} \frac{1}{k^s} & \Re(s) > 1 \\
             \frac{1}{1-2^{1-s}} \sum_{k=1}^{\infty} \frac{(-1)^{k+1}}{k^s} & 0 \le \Re(s) \le 1 \\
             2^s \pi^{s-1} \sin\frac{\pi s}{2} \Gamma(1-s) \zeta(1-s) & \Re(s) < 0
             \end{cases}"""
