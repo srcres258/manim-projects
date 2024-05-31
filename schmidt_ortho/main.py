@@ -169,3 +169,29 @@ class SchmidtOrtho2D(Scene):
             FadeOut(vec_xi_1_arrow, run_time=2),
             FadeOut(vec_xi_2_arrow, run_time=2)
         )
+
+
+class SchmidtOrtho3D(ThreeDScene):
+
+    def __init__(self,
+                 camera_class=ThreeDCamera,
+                 ambient_camera_rotation=None,
+                 default_angled_camera_orientation_kwargs=None,
+                 **kwargs):
+        super().__init__(
+            camera_class,
+            ambient_camera_rotation,
+            default_angled_camera_orientation_kwargs,
+            **kwargs)
+
+    def construct(self):
+        axes = ThreeDAxes()
+        self.set_camera_orientation(phi=75 * DEGREES, theta=0)
+        self.play(Create(axes, run_time=2))
+        self.wait(1)
+
+        self.begin_ambient_camera_rotation(rate=0.05)
+        self.wait(5)
+
+        self.stop_ambient_camera_rotation()
+        self.wait(1)
