@@ -19,6 +19,8 @@ class VideoCover(Scene):
         self.video_title: str = input("Please input the video title: ")
         self.author: str = "src_resources"
         self.date: str = datetime.datetime.now().strftime('%Y/%m/%d')
+        gen_picture = input("Input y for picture generation: ")
+        self.gen_picture: bool = gen_picture == 'y'
 
     def construct(self):
         print("Video title:", self.video_title)
@@ -31,13 +33,16 @@ class VideoCover(Scene):
         author_text.next_to(video_title_text, DOWN)
         date_text.next_to(author_text, DOWN)
 
-        self.play(Write(video_title_text, run_time=1))
-        self.play(Write(author_text, run_time=1))
-        self.play(Write(date_text, run_time=1))
-        self.wait(1)
+        if self.gen_picture:
+            self.add(video_title_text, author_text, date_text)
+        else:
+            self.play(Write(video_title_text, run_time=1))
+            self.play(Write(author_text, run_time=1))
+            self.play(Write(date_text, run_time=1))
+            self.wait(1)
 
-        self.play(
-            FadeOut(video_title_text, run_time=1),
-            FadeOut(author_text, run_time=1),
-            FadeOut(date_text, run_time=1)
-        )
+            self.play(
+                FadeOut(video_title_text, run_time=1),
+                FadeOut(author_text, run_time=1),
+                FadeOut(date_text, run_time=1)
+            )
