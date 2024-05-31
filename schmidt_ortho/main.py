@@ -16,8 +16,8 @@ class SchmidtOrtho2D(Scene):
             always_update_mobjects,
             random_seed,
             skip_animations)
-        self.vec_a_1 = np.array([-2, -4], dtype=np.float32)
-        self.vec_a_2 = np.array([3, -1], dtype=np.float32)
+        self.vec_a_1 = np.array([-3, -3], dtype=np.float32)
+        self.vec_a_2 = np.array([4, -1], dtype=np.float32)
 
         print("Vector a1: ", self.vec_a_1)
         print("Vector a2: ", self.vec_a_2)
