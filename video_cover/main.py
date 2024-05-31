@@ -35,3 +35,9 @@ class VideoCover(Scene):
         self.play(Write(author_text, run_time=1))
         self.play(Write(date_text, run_time=1))
         self.wait(1)
+
+        self.play(
+            FadeOut(video_title_text, run_time=1),
+            FadeOut(author_text, run_time=1),
+            FadeOut(date_text, run_time=1)
+        )
